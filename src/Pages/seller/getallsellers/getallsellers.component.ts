@@ -41,7 +41,7 @@ export class GetallsellersComponent {
     this.getAllsellers(); 
     location.reload(); 
   }
-  getId(id: any) {
+  view(id: any) {
     this.router.navigateByUrl('search/' + id);
   }
 

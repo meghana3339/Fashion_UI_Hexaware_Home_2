@@ -41,7 +41,7 @@ export class GetallbrandsComponent {
     this.getAllbrands(); 
     location.reload(); 
   }
-  getId(id: any) {
+  edit(id: any) {
     this.router.navigateByUrl('search/' + id);
   }
 

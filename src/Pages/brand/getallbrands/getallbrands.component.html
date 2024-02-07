@@ -1,25 +1,23 @@
 <div class="container">
-    <table class="table table-bordered table-responsive">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>brandId</th>
-                <th>brandName</th>
-                <th>description</th>
-                <th></th>
+                <th>Brand ID</th>
+                <th>Brand Name</th>
+                <th>Description</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let Brand of brand">
-                <td>{{Brand.brandId}}</td>
-                <td>{{Brand.brandName}}</td>
-                <td>{{Brand.description}}</td>
+            <tr *ngFor="let brand of brand">
+                <td>{{ brand.brandId }}</td>
+                <td>{{ brand.brandName }}</td>
+                <td>{{ brand.description }}</td>
                 <td>
-                    <button class="btn btn-info" (click)="getId(Brand.brandId)">Edit</button> &nbsp;
-                    <button class="btn btn-primary" (click)="delete(Brand.brandId)">Delete</button> &nbsp;
-                    
+                    <button class="btn btn-info" (click)="edit(brand.brandId)">Edit</button>
+                    <button class="btn btn-primary" (click)="delete(brand.brandId)">Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
-

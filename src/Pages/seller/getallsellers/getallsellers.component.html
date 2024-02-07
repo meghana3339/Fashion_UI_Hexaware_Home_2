@@ -1,30 +1,27 @@
 <div class="container">
-    <table class="table table-bordered table-responsive">
-        <thead>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
             <tr>
-                <th>UserId</th>
+                <th>User ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Mobile</th>
-                <th>RoleName</th>
-                <th></th>
+                <th>Role Name</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let Seller of seller">
-                <td>{{Seller.userId}}</td>
-                <td>{{Seller.name}}</td>
-                <td>{{Seller.email}}</td>
-                <td>{{Seller.mobile}}</td>
-                <td>{{Seller.roleName}}</td>
+            <tr *ngFor="let seller of seller">
+                <td>{{ seller.userId }}</td>
+                <td>{{ seller.name }}</td>
+                <td>{{ seller.email }}</td>
+                <td>{{ seller.mobile }}</td>
+                <td>{{ seller.roleName }}</td>
                 <td>
-                    
-                    <button class="btn btn-primary" (click)="delete(Seller.userId)">Delete</button> &nbsp;
-                    <button class="btn btn-secondary" (click)="getId(Seller.userId)">View</button>
+                    <button class="btn btn-danger" (click)="delete(seller.userId)">Delete</button>
+                    <button class="btn btn-info" (click)="view(seller.userId)">View</button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
-
-
