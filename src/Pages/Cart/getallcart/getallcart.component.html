@@ -14,6 +14,7 @@
           <th>Quantity</th>
           <th>Total Price</th>
           <!-- <th colspan="2">Action</th> -->
+         
         </tr>
       </thead>
       <tbody>
@@ -25,11 +26,6 @@
               
               <td>{{item.productName}}</td>
               <td>{{item.price}}</td>
-              <td>{{item.quantity}}</td>
-              <td>{{item.totalPrice}}</td>
-              <td colspan="2">
-                <button class="btn btn-danger" (click)="deleteCartItem(item.cartId)">Delete</button>
-              </td>
               <td>
                 <div class="quantity-input">
                   <button (click)="decreaseQuantity(item)">-</button>
@@ -37,6 +33,11 @@
                   <button (click)="increaseQuantity(item)">+</button>
                 </div>
               </td>
+              <td>{{item.totalPrice}}</td>
+              <td colspan="2">
+                <button class="btn btn-danger" (click)="deleteCartItem(item.cartId)">Delete</button>
+              </td>
+              
             </tr>
             
      </tbody>

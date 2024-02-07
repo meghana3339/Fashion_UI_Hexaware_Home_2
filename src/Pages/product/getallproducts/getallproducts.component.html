@@ -1,56 +1,17 @@
 <div class="container">
+  <button class="btn btn-secondary mx-2" (click)="sortProduct('asc')">Price: Low to High</button>
+  <button class="btn btn-secondary mx-2" (click)="sortProduct('desc')">Price: High to Low</button>
 
-	<button class="btn btn-secondary mx-2" (click)="sortProduct('asc')">Price:Low to High</button>
-	<button class="btn btn-secondary mx-2" (click)="sortProduct('desc')">Price:High to Low</button>
-
-	<!-- <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="grid">
-		<label ngbButtonLabel class="btn-primary">
-    <input ngbButton type="radio" [value]="true"> Grid
-  </label>
-		
-	</div> -->
-  <td>
-
-	<div class="row">
-		<div *ngFor="let item of products" class="col-md-6 mb-3">
-			<!--<div class="my-2" style="border: 1px solid;">ProductId:{{item.productId}}</div>-->
-      <div class="post-card">
-        <div class="post-content">
-            <!--<div class="my-2" style="border: 1px solid;">-->
-              <img src="http://localhost:5254/Resources/Images/{{item.image}}" alt="" width="300" height="250">
-            </div>
-            
-        
-          <h5>Name: {{item.name}}</h5>  
-        
-        
-          <h5>Price: ₹{{item.price}}</h5>    
-            
-            <!--<div class="my-2" style="border: 1px solid;">Product Name:{{item.name}}</div>
-            <div class="my-2" style="border: 1px solid;">Price{{item.price}}</div>
-            <div class="my-2" style="border: 1px solid;">{{item.available}}</div> -->
-            <!-- <div class="my-2" style="border: 1px solid;">{{item.brandId}}</div> -->
-        
-            
-			<td>
-                <select (change)="selectQty($event)">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-				          <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-				          <option>7</option>
-                  <option>8</option>
-                </select>
-
-              </td>
-
-			  <td><button (click)="addToCart(item.productId)">Add to Cart</button></td>
-            </div>
-            
-	</div>
-
-  
-
+  <div class="row">
+      <div *ngFor="let item of products" class="col-md-4 mb-3">
+          <div class="product-tile">
+              <img src="http://localhost:5254/Resources/Images/{{item.image}}" alt="{{item.name}}">
+              <div class="product-details">
+                  <h5>{{item.name}}</h5>
+                  <p>Price: ₹{{item.price}}</p>
+                  <button (click)="addToCart(item.productId)">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
